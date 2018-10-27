@@ -58,16 +58,24 @@ External Exploits
 
 [https://github.com/Cn33liz/HSEVD-StackOverflowGDI](https://github.com/Cn33liz/HSEVD-StackOverflowGDI)
 
+[https://github.com/Cn33liz/HSEVD-ArbitraryOverwriteLowIL](https://github.com/Cn33liz/HSEVD-ArbitraryOverwriteLowIL)
+
+[https://github.com/mgeeky/HEVD_Kernel_Exploit](https://github.com/mgeeky/HEVD_Kernel_Exploit)
+
+[https://github.com/tekwizz123/HEVD-Exploit-Solutions](https://github.com/tekwizz123/HEVD-Exploit-Solutions)
+
 
 External Researches
 -------------------
 [http://niiconsulting.com/checkmate/2016/01/windows-kernel-exploitation/](http://niiconsulting.com/checkmate/2016/01/windows-kernel-exploitation/)
 
-[http://whitehatters.academy/intro-to-windows-kernel-exploitation-2-windows-drivers/](http://whitehatters.academy/intro-to-windows-kernel-exploitation-2-windows-drivers/)
+[http://samdb.xyz/2016/01/16/intro_to_kernel_exploitation_part_0.html](http://samdb.xyz/2016/01/16/intro_to_kernel_exploitation_part_0.html)
 
-[http://whitehatters.academy/intro-to-windows-kernel-exploitation-3-my-first-driver-exploit/](http://whitehatters.academy/intro-to-windows-kernel-exploitation-3-my-first-driver-exploit/)
+[http://samdb.xyz/2016/01/17/intro_to_kernel_exploitation_part_1.html](http://samdb.xyz/2016/01/17/intro_to_kernel_exploitation_part_1.html)
 
-[http://whitehatters.academy/intro-to-windows-kernel-exploitation-more-of-the-hacksys-driver/](http://whitehatters.academy/intro-to-windows-kernel-exploitation-more-of-the-hacksys-driver/)
+[http://samdb.xyz/2016/01/18/intro_to_kernel_exploitation_part_2.html](http://samdb.xyz/2016/01/18/intro_to_kernel_exploitation_part_2.html)
+
+[http://samdb.xyz/2017/06/22/intro_to_kernel_exploitation_part_3.html](http://samdb.xyz/2017/06/22/intro_to_kernel_exploitation_part_3.html)
 
 [https://sizzop.github.io/2016/07/05/kernel-hacking-with-hevd-part-1.html](https://sizzop.github.io/2016/07/05/kernel-hacking-with-hevd-part-1.html)
 
@@ -93,6 +101,28 @@ External Researches
 
 [http://dokydoky.tistory.com/445](http://dokydoky.tistory.com/445)
 
+[https://hshrzd.wordpress.com/2017/05/28/starting-with-windows-kernel-exploitation-part-1-setting-up-the-lab/](https://hshrzd.wordpress.com/2017/05/28/starting-with-windows-kernel-exploitation-part-1-setting-up-the-lab/)
+
+[https://hshrzd.wordpress.com/2017/06/05/starting-with-windows-kernel-exploitation-part-2/](https://hshrzd.wordpress.com/2017/06/05/starting-with-windows-kernel-exploitation-part-2/)
+
+[https://hshrzd.wordpress.com/2017/06/22/starting-with-windows-kernel-exploitation-part-3-stealing-the-access-token/](https://hshrzd.wordpress.com/2017/06/22/starting-with-windows-kernel-exploitation-part-3-stealing-the-access-token/)
+
+[https://osandamalith.com/2017/04/05/windows-kernel-exploitation-stack-overflow/](https://osandamalith.com/2017/04/05/windows-kernel-exploitation-stack-overflow/)
+
+[https://osandamalith.com/2017/06/14/windows-kernel-exploitation-arbitrary-overwrite/](https://osandamalith.com/2017/06/14/windows-kernel-exploitation-arbitrary-overwrite/)
+
+[https://osandamalith.com/2017/06/22/windows-kernel-exploitation-null-pointer-dereference/](https://osandamalith.com/2017/06/22/windows-kernel-exploitation-null-pointer-dereference/)
+
+[http://dali-mrabet1.rhcloud.com/windows-kernel-exploitation-arbitrary-memory-overwrite-hevd-challenges/](http://dali-mrabet1.rhcloud.com/windows-kernel-exploitation-arbitrary-memory-overwrite-hevd-challenges/)
+
+[https://blahcat.github.io/2017/08/31/arbitrary-write-primitive-in-windows-kernel-hevd/](https://blahcat.github.io/2017/08/31/arbitrary-write-primitive-in-windows-kernel-hevd/)
+
+[https://klue.github.io/blog/2017/09/hevd_stack_gs/](https://klue.github.io/blog/2017/09/hevd_stack_gs/)
+
+[https://glennmcgui.re/introduction-to-windows-kernel-exploitation-pt-1/](https://glennmcgui.re/introduction-to-windows-kernel-exploitation-pt-1/)
+
+[https://glennmcgui.re/introduction-to-windows-kernel-driver-exploitation-pt-2/](https://glennmcgui.re/introduction-to-windows-kernel-driver-exploitation-pt-2/)
+
 
 Author
 ------
@@ -100,37 +130,40 @@ Author
 
 > ashfaq[at]payatu[dot]com
 
-> **[@HackSysTeam](https://twitter.com/HackSysTeam) | [Blog](http://hacksys.vfreaks.com/ "HackSys Team") | [null](http://null.co.in/profile/411-ashfaq-ansari)**
+> **[@HackSysTeam](https://twitter.com/HackSysTeam) | [Blog](http://hacksys.vfreaks.com/ "HackSys Team") | [null](https://null.co.in/profile/411-ashfaq-ansari)**
 
-> ![Payatu Technologies](http://www.payatu.com/wp-content/uploads/2015/04/Payatu_Logo.png "Payatu Technologies Pvt. Ltd.")
+> ![Payatu Technologies](https://www.payatu.com/wp-content/uploads/2015/04/Payatu_Logo.png "Payatu Technologies Pvt. Ltd.")
 
-> [http://www.payatu.com/](http://www.payatu.com/ "Payatu Technologies Pvt. Ltd.")
+> [http://www.payatu.com/](https://www.payatu.com/ "Payatu Technologies Pvt. Ltd.")
 
 
 Screenshots
 -----------
-![Driver Banner](http://www.payatu.com/wp-content/uploads/2015/05/2015-05-27_20h14_33.png "Driver Banner")
+![Driver Banner](https://www.payatu.com/wp-content/uploads/2015/05/2015-05-27_20h14_33.png "Driver Banner")
 
-![Help](http://www.payatu.com/wp-content/uploads/2015/05/2015-06-03_22h27_24.png "Help")
+![Help](https://www.payatu.com/wp-content/uploads/2015/05/2015-06-03_22h27_24.png "Help")
 
-![Exploitation](http://www.payatu.com/wp-content/uploads/2015/05/2015-05-27_20h22_35.png "Exploitation")
+![Exploitation](https://www.payatu.com/wp-content/uploads/2015/05/2015-05-27_20h22_35.png "Exploitation")
 
-![Driver Debug Print](http://www.payatu.com/wp-content/uploads/2015/05/2015-05-27_20h28_07.png "Driver Debug Print")
+![Driver Debug Print](https://www.payatu.com/wp-content/uploads/2015/05/2015-05-27_20h28_07.png "Driver Debug Print")
 
 
 Vulnerabilities Implemented
 ---------------------------
+* **Write NULL**
 * **Double Fetch**
 * **Pool Overflow**
 * **Use After Free**
 * **Type Confusion**
 * **Stack Overflow**
 * **Integer Overflow**
+* **Memory Disclosure**
 * **Stack Overflow GS**
 * **Arbitrary Overwrite**
 * **Null Pointer Dereference**
 * **Uninitialized Heap Variable**
 * **Uninitialized Stack Variable**
+* **Insecure Kernel Resource Access**
 
 
 Building Driver

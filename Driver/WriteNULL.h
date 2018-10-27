@@ -39,23 +39,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 See the file 'LICENSE' for complete copying permission.
 
 Module Name:
-    PoolOverflow.h
+    WriteNULL.h
 
 Abstract:
     This module implements the data structures for
-    Pool Overflow module.
+    Write NULL module.
 
 --*/
 
-#ifndef __POOL_OVERFLOW_H__
-    #define __POOL_OVERFLOW_H__
+#ifndef __WRITE_NULL_H__
+    #define __WRITE_NULL_H__
 
     #pragma once
 
     #include "Common.h"
 
-    #define POOL_BUFFER_SIZE 504
+    NTSTATUS    TriggerWriteNULL(IN PVOID UserBuffer);
 
-    NTSTATUS    TriggerPoolOverflow(IN PVOID UserBuffer, IN SIZE_T Size);
-
-#endif  //__POOL_OVERFLOW_H__
+#endif //__WRITE_NULL_H__

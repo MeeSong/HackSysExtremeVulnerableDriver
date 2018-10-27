@@ -39,30 +39,30 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 See the file 'LICENSE' for complete copying permission.
 
 Module Name:
-    PoolOverflow.c
+    PagedPoolSessionOverflow.c
 
 Abstract:
     This module implements the functions to demonstrate
-    Pool Overflow vulnerability.
+    PagedPoolSession buffer overflow vulnerability.
 
 --*/
 
-#include "PoolOverflow.h"
+#include "PagedPoolSessionOverflow.h"
 
 #ifdef ALLOC_PRAGMA
-    #pragma alloc_text(PAGE, TriggerPoolOverflow)
-    #pragma alloc_text(PAGE, PoolOverflowIoctlHandler)
+    #pragma alloc_text(PAGE, TriggerPagedPoolSessionOverflow)
+    #pragma alloc_text(PAGE, PagedPoolSessionOverflowIoctlHandler)
 #endif // ALLOC_PRAGMA
 
 #pragma auto_inline(off)
 
 /// <summary>
-/// Trigger the Pool Overflow Vulnerability
+/// Trigger the Paged Pool Session buffer overflow vulnerability
 /// </summary>
 /// <param name="UserBuffer">The pointer to user mode buffer</param>
 /// <param name="Size">Size of the user mode buffer</param>
 /// <returns>NTSTATUS</returns>
-NTSTATUS TriggerPoolOverflow(IN PVOID UserBuffer, IN SIZE_T Size) {
+NTSTATUS TriggerPagedPoolSessionOverflow(IN PVOID UserBuffer, IN SIZE_T Size) {
     PVOID KernelBuffer = NULL;
     NTSTATUS Status = STATUS_SUCCESS;
 
@@ -72,7 +72,7 @@ NTSTATUS TriggerPoolOverflow(IN PVOID UserBuffer, IN SIZE_T Size) {
         DbgPrint("[+] Allocating Pool chunk\n");
 
         // Allocate Pool chunk
-        KernelBuffer = ExAllocatePoolWithTag(NonPagedPool,
+        KernelBuffer = ExAllocatePoolWithTag(PagedPoolSession,
                                              (SIZE_T)POOL_BUFFER_SIZE,
                                              (ULONG)POOL_TAG);
 
@@ -85,7 +85,7 @@ NTSTATUS TriggerPoolOverflow(IN PVOID UserBuffer, IN SIZE_T Size) {
         }
         else {
             DbgPrint("[+] Pool Tag: %s\n", STRINGIFY(POOL_TAG));
-            DbgPrint("[+] Pool Type: %s\n", STRINGIFY(NonPagedPool));
+            DbgPrint("[+] Pool Type: %s\n", STRINGIFY(PagedPoolSession));
             DbgPrint("[+] Pool Size: 0x%X\n", (SIZE_T)POOL_BUFFER_SIZE);
             DbgPrint("[+] Pool Chunk: 0x%p\n", KernelBuffer);
         }
@@ -104,7 +104,7 @@ NTSTATUS TriggerPoolOverflow(IN PVOID UserBuffer, IN SIZE_T Size) {
         // Hence, there will be no overflow
         RtlCopyMemory(KernelBuffer, UserBuffer, (SIZE_T)POOL_BUFFER_SIZE);
 #else
-        DbgPrint("[+] Triggering Pool Overflow\n");
+        DbgPrint("[+] Triggering Paged Pool Session Overflow\n");
 
         // Vulnerability Note: This is a vanilla Pool Based Overflow vulnerability
         // because the developer is passing the user supplied value directly to
@@ -132,12 +132,12 @@ NTSTATUS TriggerPoolOverflow(IN PVOID UserBuffer, IN SIZE_T Size) {
 }
 
 /// <summary>
-/// Pool Overflow Ioctl Handler
+/// Paged Pool Session Overflow Ioctl Handler
 /// </summary>
 /// <param name="Irp">The pointer to IRP</param>
 /// <param name="IrpSp">The pointer to IO_STACK_LOCATION structure</param>
 /// <returns>NTSTATUS</returns>
-NTSTATUS PoolOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp) {
+NTSTATUS PagedPoolSessionOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp) {
     SIZE_T Size = 0;
     PVOID UserBuffer = NULL;
     NTSTATUS Status = STATUS_UNSUCCESSFUL;
@@ -149,7 +149,7 @@ NTSTATUS PoolOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp) {
     Size = IrpSp->Parameters.DeviceIoControl.InputBufferLength;
 
     if (UserBuffer) {
-        Status = TriggerPoolOverflow(UserBuffer, Size);
+        Status = TriggerPagedPoolSessionOverflow(UserBuffer, Size);
     }
 
     return Status;

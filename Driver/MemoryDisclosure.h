@@ -8,7 +8,7 @@
           ##     ## ##         ## ##   ##     ## 
           ##     ## ########    ###    ########  
 
-        HackSys Extreme Vulnerable Driver Exploit
+            HackSys Extreme Vulnerable Driver
 
 Author : Ashfaq Ansari
 Contact: ashfaq[at]payatu[dot]com
@@ -39,45 +39,23 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 See the file 'LICENSE' for complete copying permission.
 
 Module Name:
-    HackSysEVDExploit.h
+    MemoryDisclosure.h
 
 Abstract:
-    This module implements the data structures used by the
-    main exploit module handling the exploitation routines.
+    This module implements the data structures for
+    Memory Disclosure module.
 
 --*/
 
-#ifndef __EXPLOIT_H__
-    #define __EXPLOIT_H__
+#ifndef __MEMORY_DISCLOSURE_H__
+    #define __MEMORY_DISCLOSURE_H__
 
     #pragma once
 
-    #include "arg.h"
     #include "Common.h"
 
-    typedef enum _VULNERABILITY_TYPE {
-        DoubleFetch,
-        PoolOverflow,
-        UseAfterFree,
-        TypeConfusion,
-        StackOverflow,
-        IntegerOverflow,
-        StackOverflowGS,
-        ArbitraryOverwrite,
-        NullPointerDereference,
-        InsecureKernelFileAccess,
-        UninitializedHeapVariable,
-        UninitializedStackVariable,
-    } VULNERABILITY_TYPE, *PVULNERABILITY_TYPE;
+    #define POOL_BUFFER_SIZE 504
 
-    typedef struct _EXPLOIT_VULNERABILITY {
-        PTCHAR             Command;
-        VULNERABILITY_TYPE VulnerabilityType;
-    } EXPLOIT_VULNERABILITY, *PEXPLOIT_VULNERABILITY;
+    NTSTATUS    TriggerMemoryDisclosure(IN PVOID UserOutputBuffer, IN SIZE_T Size);
 
-    static VOID    ShowUsage(PTCHAR Process);
-    BOOL           IsProcessHavingHigherPrivilege(LPCSTR TargetProcess);
-    VOID           Exploit(PEXPLOIT_VULNERABILITY ExploitVulnerability);
-    VOID           LaunchExploitThread(LPTHREAD_START_ROUTINE ExploitHandlerThread);
-
-#endif //__EXPLOIT_H__
+#endif  //__MEMORY_DISCLOSURE_H__

@@ -8,7 +8,7 @@
           ##     ## ##         ## ##   ##     ## 
           ##     ## ########    ###    ########  
 
-        HackSys Extreme Vulnerable Driver Exploit
+            HackSys Extreme Vulnerable Driver
 
 Author : Ashfaq Ansari
 Contact: ashfaq[at]payatu[dot]com
@@ -39,45 +39,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 See the file 'LICENSE' for complete copying permission.
 
 Module Name:
-    HackSysEVDExploit.h
+    InsecureKernelResourceAccess.h
 
 Abstract:
-    This module implements the data structures used by the
-    main exploit module handling the exploitation routines.
+    This module implements the data structures for
+    Insecure Kernel Resource Access module.
 
 --*/
 
-#ifndef __EXPLOIT_H__
-    #define __EXPLOIT_H__
+#ifndef __INSECURE_KERNEL_RESOURCE_ACCESS_H__
+    #define __INSECURE_KERNEL_RESOURCE_ACCESS_H__
 
     #pragma once
 
-    #include "arg.h"
     #include "Common.h"
 
-    typedef enum _VULNERABILITY_TYPE {
-        DoubleFetch,
-        PoolOverflow,
-        UseAfterFree,
-        TypeConfusion,
-        StackOverflow,
-        IntegerOverflow,
-        StackOverflowGS,
-        ArbitraryOverwrite,
-        NullPointerDereference,
-        InsecureKernelFileAccess,
-        UninitializedHeapVariable,
-        UninitializedStackVariable,
-    } VULNERABILITY_TYPE, *PVULNERABILITY_TYPE;
+    NTSTATUS    TriggerInsecureKernelFileAccess();
 
-    typedef struct _EXPLOIT_VULNERABILITY {
-        PTCHAR             Command;
-        VULNERABILITY_TYPE VulnerabilityType;
-    } EXPLOIT_VULNERABILITY, *PEXPLOIT_VULNERABILITY;
-
-    static VOID    ShowUsage(PTCHAR Process);
-    BOOL           IsProcessHavingHigherPrivilege(LPCSTR TargetProcess);
-    VOID           Exploit(PEXPLOIT_VULNERABILITY ExploitVulnerability);
-    VOID           LaunchExploitThread(LPTHREAD_START_ROUTINE ExploitHandlerThread);
-
-#endif //__EXPLOIT_H__
+#endif  //__INSECURE_KERNEL_RESOURCE_ACCESS_H__

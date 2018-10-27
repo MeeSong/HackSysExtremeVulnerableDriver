@@ -62,18 +62,22 @@ Abstract:
 
     typedef void (*FunctionPointer)();
 
+    NTSTATUS    WriteNULLIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    DoubleFetchIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
-    NTSTATUS    PoolOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    UseUaFObjectIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    FreeUaFObjectIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    TypeConfusionIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    StackOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    IntegerOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    StackOverflowGSIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
+    NTSTATUS    MemoryDisclosureIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    AllocateUaFObjectIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    AllocateFakeObjectIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    ArbitraryOverwriteIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
+    NTSTATUS    NonPagedPoolOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    NullPointerDereferenceIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
+    NTSTATUS    PagedPoolSessionOverflowIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
+    NTSTATUS    InsecureKernelFileAccessIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    UninitializedHeapVariableIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
     NTSTATUS    UninitializedStackVariableIoctlHandler(IN PIRP Irp, IN PIO_STACK_LOCATION IrpSp);
 
